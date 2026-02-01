@@ -1,0 +1,22 @@
+name: Bootstrap Java Repo (pdrodavi-group)
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_name:
+        required: true
+        description: Nome do novo repositório
+      visibility:
+        required: true
+        default: private
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create repository
+        uses: pdrodavi-group/create-configured-repo@v1
+        with:
+          repo_name: ${{ inputs.repo_name }}
+          visibility: ${{ inputs.visibility }}
+          token: ${{ secrets.ADMIN_TOKEN_ORG }}
