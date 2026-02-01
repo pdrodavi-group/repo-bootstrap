@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create repository
-        uses: pdrodavi-group/create-configured-repo@v1
+        uses: pdrodavi-group/create-configured-repo@main
         with:
           repo_name: ${{ inputs.repo_name }}
           visibility: ${{ inputs.visibility }}
